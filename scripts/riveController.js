@@ -1,13 +1,14 @@
 let isEating;
 let isSad;
 let hp;
-let initial_hp = 100;
+// let initial_hp = 100;
 
 const riveInstance = new rive.Rive({
-  src: "../assets/lion_thing.riv",
+  src: "../assets/frog.riv",
+  // src: "../assets/lion_thing.riv",
   canvas: document.getElementById("riveCanvas"),
   autoplay: true,
-  stateMachines: ["controller", "health"],
+  stateMachines: ["controller", "Bar"],
   onLoad: () => {
     riveInstance.resizeDrawingSurfaceToCanvas();
 
@@ -18,19 +19,10 @@ const riveInstance = new rive.Rive({
     isSad = controller_inputs.find((item) => item.name === "isSad");
 
     // health input
-    let health_inputs = riveInstance.stateMachineInputs("health");
+    let health_inputs = riveInstance.stateMachineInputs("Bar");
     hp = health_inputs.find((item) => item.name === "hp");
 
-    hp.value = initial_hp;
-
-    setInterval(() => {
-      if (hp.value < 90) {
-        isSad.value = true;
-      } else {
-        isSad.value = false;
-      }
-      hp.value = hp.value - 1;
-    }, 500);
+    // hp.value = initial_hp;
   },
 });
 

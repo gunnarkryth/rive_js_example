@@ -1,14 +1,11 @@
 import { hp, isEating } from "./riveController.js";
+import { socket } from "./socket/socketController.js";
 
 let feedButton = document.getElementById("feedButton");
 
 const feed = () => {
   isEating.fire();
-  if (hp.value < 90) {
-    hp.value = hp.value + 10;
-  } else {
-    hp.value = 100;
-  }
+  socket.emit("feed", { feed: "Client has fed" });
 };
 
 feedButton.addEventListener("click", () => {
