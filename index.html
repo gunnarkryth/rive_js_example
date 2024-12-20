@@ -13,7 +13,22 @@
     <script src="scripts/socket/socketReceivers.js" type="module"></script>
   </head>
   <body>
-    <canvas id="riveCanvas"></canvas>
-    <button id="feedButton">Feed</button>
+    <canvas
+      style="
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+      id="riveCanvas"
+    >
+      <div>
+        <button id="feedButton">Feed</button>
+      </div>
+    </canvas>
   </body>
 </html>
