@@ -4,7 +4,7 @@ import { socket } from "./socket/socketController.js";
 let feedButton = document.getElementById("feedButton");
 
 const feed = () => {
-  isEating.fire();
+  // isEating.fire();
   socket.emit("feed", { feed: "Client has fed" });
 };
 
